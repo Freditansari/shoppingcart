@@ -1,0 +1,11 @@
+<mat-toolbar class= "mat-primary"><h2>Books portal</h2>
+  <button mat-button [matMenuTriggerFor]="menu">Books</button>
+      <mat-menu #menu="matMenu">
+          <button mat-flat-button>List Books</button><br>
+          <button mat-flat-button>add a book</button>
+      </mat-menu>
+      <div align="right">
+          <span class="example-spacer"></span>
+          <button mat-flat-button class="mat-primary">Logout</button>
+      </div>
+</mat-toolbar>
