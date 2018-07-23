@@ -1,5 +1,7 @@
 package com.fredy.bookstore.domain.security;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -12,10 +14,11 @@ public class Role implements Serializable {
 
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int roleID;
     private String name;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "role",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     private Set<UserRole> userRoles = new HashSet<>();
     public Role(){}
 

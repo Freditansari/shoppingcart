@@ -3,6 +3,8 @@ package com.fredy.bookstore.domain.security;
 import com.fredy.bookstore.domain.User;
 
 import javax.persistence.*;
+
+
 import java.io.Serializable;
 
 @Entity
@@ -14,11 +16,11 @@ public class UserRole implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long userRoleId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Role role;
 
     public UserRole(User user , Role role) {
